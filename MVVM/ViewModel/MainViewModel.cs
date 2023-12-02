@@ -1,4 +1,5 @@
 ﻿using NEXT_VPN.Core;
+using NEXT_VPN.MVVM.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,8 +28,14 @@ namespace NEXT_VPN.MVVM.ViewModel
             }
         }
 
+        public  ProtctionViewModel ProtectionVM { get; set; }
+
         public MainViewModel()
         {
+            //for currnt view
+            ProtectionVM = new ProtctionViewModel();
+            CurrentView = ProtectionVM;
+
             Application.Current.MainWindow.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
 
             MoveWindowCommand = new RelayCommand(o => { Application.Current.MainWindow.DragMove(); });

@@ -6,7 +6,12 @@
     <RootNamespace>NEXT_VPN</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>security_guard_shield_icon_153085.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="security_guard_shield_icon_153085.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="MVVM\Model\" />

@@ -97,6 +97,7 @@ var myCommand = new RelayCommand(
 
 # Apply Headter Action Button 
 as like minimize, maximize, shoutdown
+# Apply another View in View section to se protection page adn implemet it
 
 
 

@@ -2,8 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:NEXT_VPN"
+             xmlns:view="clr-namespace:NEXT_VPN.MVVM.View"
+             xmlns:vms="clr-namespace:NEXT_VPN.MVVM.ViewModel"
+             
+
              StartupUri="MVVM/View/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                 <!--theams for the application-->
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type vms:ProtctionViewModel}">
+                <view:ProtectionView/>
+
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

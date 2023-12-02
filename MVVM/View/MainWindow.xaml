@@ -35,10 +35,11 @@
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Turbo 1.1"
+                <TextBlock Text="NEXT VPN 1.0"
                            Foreground="WhiteSmoke"
                            FontFamily="Consolas"
                            FontWeight="Bold"
+                           FontSize="16"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Margin="100,0,0,0"/>
@@ -49,20 +50,22 @@
                             Margin="0,0,4,0">
                     <Button Content="⛔" 
                             Width="30" 
-                            Background="#004440" 
-                            BorderBrush="Black"
+                            Background="#004440"
+                             BorderBrush="#1b5859" 
+                            
                             Command="{Binding MinimizeWindowCommand}"/>
                     
                     <Button Content="⏹" 
                             Width="30" 
                             Background="#0040" 
-                            BorderBrush="Black"
+                             BorderBrush="#1b5859" 
+                           
                             Command="{Binding MaximizedWindowCommand}"/>
                     
                     <Button Content="❌"
                             Width="30" 
                             Background="#004440" 
-                            BorderBrush="Black" 
+                            BorderBrush="#1b5859" 
                            
                             Command="{Binding ShutdownWindowCommand}"/>
 
@@ -72,7 +75,7 @@
             
         </Border >
 
-        <Border Width="100"
+        <Border Width="140"
                 HorizontalAlignment="Left"
                 Background="#252525"
                >
@@ -85,7 +88,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
-                                                         To="100"
+                                                         To="140"
                                                          Duration="0:0:.1"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -96,10 +99,10 @@
                         <EventTrigger.Actions>
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
-                                 To="80"
-                                 Duration="0:0:.3"/>
-                                </Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
+                                         To="80"
+                                         Duration="0:0:.2"/>                                            
+                                    </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger.Actions>
                         </EventTrigger>
@@ -135,7 +138,7 @@
 
         </Border>
 
-        <ContentPresenter />
+        <ContentPresenter Content="{Binding CurrentView}" />
 
     </DockPanel>
 </Window>
