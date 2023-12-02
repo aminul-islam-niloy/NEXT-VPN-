@@ -27,7 +27,7 @@ namespace NEXT_VPN
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+           
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

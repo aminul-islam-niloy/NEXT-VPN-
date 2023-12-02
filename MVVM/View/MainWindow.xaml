@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NEXT_VPN"
+        xmlns:local="clr-namespace:NEXT_VPN" xmlns:viewmodel="clr-namespace:NEXT_VPN.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="900"
         
@@ -11,19 +11,28 @@
         Background="Transparent"
         AllowsTransparency="True"
         ResizeMode="CanResize"
-        WindowStartupLocation="CenterScreen"
-        >
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
 
     <DockPanel Background="#004440"
                Margin="7">
-        
+
         <Border Height="28"
                 Background="#1b5859"
                 DockPanel.Dock="Top">
+
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding MoveWindowCommand}"/>
+            </Border.InputBindings>
+            
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="Turbo 1.1"
@@ -38,9 +47,24 @@
                             Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Margin="0,0,4,0">
-                    <Button Content="-" Width="20" Background="#004440"/>
-                    <Button Content="#" Width="20" Background="#0040"/>
-                    <Button Content="x" Width="20" Background="#004440" Click="Button_Click"/>
+                    <Button Content="⛔" 
+                            Width="30" 
+                            Background="#004440" 
+                            BorderBrush="Black"
+                            Command="{Binding MinimizeWindowCommand}"/>
+                    
+                    <Button Content="⏹" 
+                            Width="30" 
+                            Background="#0040" 
+                            BorderBrush="Black"
+                            Command="{Binding MaximizedWindowCommand}"/>
+                    
+                    <Button Content="❌"
+                            Width="30" 
+                            Background="#004440" 
+                            BorderBrush="Black" 
+                           
+                            Command="{Binding ShutdownWindowCommand}"/>
 
                 </StackPanel>
 
