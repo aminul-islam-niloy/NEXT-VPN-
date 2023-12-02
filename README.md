@@ -95,3 +95,9 @@ var myCommand = new RelayCommand(
 ```
 
 
+# Apply Headter Action Button 
+as like minimize, maximize, shoutdown
+
+
+
+
