@@ -1,10 +1,10 @@
 # NEXT VPN
 
-# ObservableObject
+`` ObservableObject``
 
 `ObservableObject class implements the INotifyPropertyChanged interface,
 which is commonly used in the MVVM pattern to notify subscribers when a 
-property changes. Here's the corrected version with some improvements`
+property changes.`
 
 `ObservableObject` is a base class that implements the `INotifyPropertyChanged` interface. It is commonly used in the MVVM (Model-View-ViewModel) pattern to notify subscribers when a property changes.
 
@@ -25,17 +25,19 @@ property changes. Here's the corrected version with some improvements`
 // Example usage of ObservableObject
 class YourViewModel : ObservableObject
 {
-    private string _yourProperty;
+    private string _Property;
 
-    public string YourProperty
+    public string Property
     {
-        get { return _yourProperty; }
+        get { return _Property; }
         set
         {
-            if (_yourProperty != value)
+            if (_Property != value)
             {
-                _yourProperty = value;
-                OnPropertyChanged(); // Notify subscribers that the property has changed
+                _Property = value;
+                OnPropertyChanged();
+                
+                // Notify subscribers that the property has changed
             }
         }
     }
@@ -80,12 +82,13 @@ class YourViewModel : ObservableObject
 var myCommand = new RelayCommand(
     execute: obj => 
     {
-        // Your action logic here
+        // logic
     },
     canExecute: obj => 
     {
-        // Your canExecute logic here
-        return true; // Change this based on your conditions
+        // canExecute logic
+        return true;
+        // Change this based on your conditions
     }
 );
 
